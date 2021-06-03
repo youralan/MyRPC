@@ -1,7 +1,9 @@
 package com.alan.rpc.common.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -9,6 +11,8 @@ import java.io.Serializable;
  * rpc调用请求
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder//让我们可以链式编程去初始化一个对象
 public class RpcRequest implements Serializable {
     /**

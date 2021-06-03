@@ -1,12 +1,13 @@
 package com.alan.rpc.register;
 
-import com.alan.rpc.common.excpetion.RpcException;
+import java.net.InetSocketAddress;
 
 /**
- * 服务注册表接口
+ * 远程服务注册中心
  */
 public interface ServiceRegistry {
-    //注册服务，获取服务
-    <T> void register(T service) throws RpcException;
-    Object getService(String serviceName) throws RpcException;
+    //注册服务
+    void register(String serviceName, InetSocketAddress inetSocketAddress);
+    //服务查询
+    InetSocketAddress lookupService(String serviceName);
 }

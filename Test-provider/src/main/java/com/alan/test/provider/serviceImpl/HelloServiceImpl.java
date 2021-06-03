@@ -1,10 +1,12 @@
-package com.alan.rpc.api;
+package com.alan.test.provider.serviceImpl;
 
+import com.alan.rpc.annotation.Service;
+import com.alan.rpc.api.HelloObject;
+import com.alan.rpc.api.HelloService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.Serializable;
-
+@Service
 public class HelloServiceImpl implements HelloService {
     private final static Logger LOGGER = LoggerFactory.getLogger(HelloServiceImpl.class);
     @Override

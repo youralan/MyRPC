@@ -7,9 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Test-consumer" />
-        <module name="RPC-api" />
         <module name="Test-provider" />
+        <module name="RPC-api" />
+        <module name="Test-consumer" />
         <module name="RPC-core" />
         <module name="RPC-common" />
       </profile>

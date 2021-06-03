@@ -11,12 +11,10 @@ import java.lang.reflect.Proxy;
  * 代理中间类invocationHandler
  */
 public class RpcClientProxy implements InvocationHandler {
-    private String host;
-    private int port;
+   private RpcClient rpcClient;
 
-    public RpcClientProxy(String host, int port){
-        this.host = host;
-        this.port = port;
+    public RpcClientProxy(RpcClient rpcClient){
+       this.rpcClient = rpcClient;
     }
 
     @SuppressWarnings("unchecked")
@@ -41,9 +39,8 @@ public class RpcClientProxy implements InvocationHandler {
                 .parameters(args)//方法参数
                 .parametersType(method.getParameterTypes())//参数类型
                 .build();
-        RpcClient rpcClient = new RpcClient();//rpc客户端
         //返回执行的data信息
-        return ((RpcResponse) rpcClient.sendRequest(request, host, port)).getData();
+        return ((RpcResponse) rpcClient.sendRequest(request)).getData();
     }
 
 }

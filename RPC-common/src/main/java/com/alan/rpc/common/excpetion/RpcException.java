@@ -1,6 +1,6 @@
 package com.alan.rpc.common.excpetion;
 
-public class RpcException extends Throwable {
+public class RpcException extends RuntimeException {
     public RpcException(Object message){
         super(message.toString());
     }
